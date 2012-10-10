@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005030413) do
+ActiveRecord::Schema.define(:version => 20121010170620) do
+
+  create_table "forms", :force => true do |t|
+    t.text     "allergies"
+    t.text     "family_history"
+    t.text     "medical_history"
+    t.text     "medication"
+    t.text     "surgery_history"
+    t.boolean  "smoke"
+    t.boolean  "alcohol"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "forms", ["user_id", "created_at"], :name => "index_forms_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

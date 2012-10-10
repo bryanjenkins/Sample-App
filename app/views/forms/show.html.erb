@@ -1,0 +1,64 @@
+<% provide(:title, "Form") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <img class="gravatar" src="http://flickholdr.com/50/50" class="img-rounded">
+      <h1>
+        <%= @user.name %>
+      </h1>
+      <%= link_to "View all Records", @user %>
+    </section>
+  </aside>
+  <div class="span8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <td>Allergies</td>
+          <td><%= @form.allergies %></td>
+        </tr>
+        <tr>
+          <td>Family History</td>
+          <td>
+            <% @form.family_history.each do |k, v| %>
+              <%= k %>: <%= v %><br>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>Medical History</td>
+          <td>
+            <% @form.medical_history.each do |k, v| %>
+              <%= k %>: <%= v %><br>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>Medication</td>
+          <td><%= @form.medication %></td>
+        </tr>
+        <tr>
+          <td>Surgery History</td>
+          <td><%= @form.surgery_history %></td>
+        </tr>
+        <tr>
+          <td>Smokes</td>
+          <td><%= @form.smoke %></td>
+        </tr>
+        <tr>
+          <td>Drinks Alcohol</td>
+          <td><%= @form.alcohol %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

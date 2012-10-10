@@ -1,6 +1,9 @@
 SampleApp::Application.routes.draw do
 
+  get "forms/new"
+
   resources :users
+  resources :forms
 
   root :to => 'static_pages#home'
 

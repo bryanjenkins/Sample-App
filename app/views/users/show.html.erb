@@ -2,9 +2,19 @@
 <div class="row">
   <aside class="span4">
     <section>
+      <img class="gravatar" src="http://flickholdr.com/50/50" class="img-rounded">
       <h1>
         <%= @user.name %>
       </h1>
     </section>
   </aside>
+  <div class="span8">
+    <% if @user.forms.any? %>
+      <h3>Patient Forms (<%= @user.forms.count %>)</h3>
+      <ol class="forms">
+        <%= render @forms %>
+      </ol>
+      <%= will_paginate @forms %>
+    <% end %>
+  </div>
 </div>
