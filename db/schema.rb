@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010170620) do
+ActiveRecord::Schema.define(:version => 20121011174626) do
 
   create_table "forms", :force => true do |t|
     t.text     "allergies"
-    t.text     "family_history"
-    t.text     "medical_history"
+    t.integer  "family_history_id"
+    t.integer  "medical_history_id"
     t.text     "medication"
     t.text     "surgery_history"
     t.boolean  "smoke"
     t.boolean  "alcohol"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "user_id"
   end
 

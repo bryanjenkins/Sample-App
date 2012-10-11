@@ -1,2 +1,55 @@
-<h1>Forms#new</h1>
-<p>Find me in app/views/forms/new.html.erb</p>
+<%= provide(:title, 'New Patient Form') %>
+
+<h1>New Medical Record</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @form do |f| %>
+      <%= render 'shared/error_messages'  %>
+      <%= f.label :allergies %>
+      <%= f.text_area :allergies, :rows => "4" %>
+
+      <%= f.label :medication %>
+      <%= f.text_area :medication, :rows => "4" %>
+
+      <%= f.label :surgery_history %>
+      <%= f.text_area :surgery_history, :rows => "4" %>
+
+      <br>
+      <span style="margin-right: 20px;">Do You Smoke?</span>
+      <label class="radio inline">
+        <input type="radio" id="form_smoke" name="form[smoke]" value="false" checked="checked"> No
+      </label>
+      <label class="radio inline">
+        <input type="radio" id="form_smoke" name="form[smoke]" value="true"> Yes
+      </label>
+      <br>
+      <br>
+      <span style="margin-right: 20px;">Do You Drink Alcohol?</span>
+      <label class="radio inline">
+        <input type="radio" id="form_alcohol" name="form[alcohol]" value="false" checked="checked"> No
+      </label>
+      <label class="radio inline">
+        <input type="radio" id="form_alcohol" name="form[alcohol]" value="true"> Yes
+      </label>
+      
+      <br>
+      <br>
+      <div class="alert alert-info">All other fields are automatically added for the time being.</div>
+      
+      <% 
+        params = {
+          :medical_history => { blindness: true, deafness: false, vertigo: true, other: "I have a few other conditions including awesomeness"
+          },
+          :family_history => { heart_disease: true, lung_disease: false, kidney_disease: false, rheumatiod_arthritis: true, cancer: false, other: "Entrepreneurship"
+          }
+        }
+      %>
+
+      <% puts hash_as_hidden_fields(params) %>
+
+      <%= f.submit "Create a record", class: "btn btn-large btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

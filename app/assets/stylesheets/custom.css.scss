@@ -24,10 +24,6 @@ section {
   overflow: auto;
 }
 
-textarea {
-  resize: vertical;
-}
-
 .center {
   text-align: center;
   h1 {
@@ -192,4 +188,8 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+.smoke-alcohol label, input {
+  float: left;
 }
