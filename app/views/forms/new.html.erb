@@ -5,18 +5,82 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for @form do |f| %>
-      <%= render 'shared/error_messages'  %>
-      <%= f.label :allergies %>
-      <%= f.text_area :allergies, :rows => "4" %>
+      <div id="text-input-form-section">
+        <%= render 'shared/error_messages'  %>
+        <%= f.label :allergies %>
+        <%= f.text_area :allergies, :rows => "4" %>
 
-      <%= f.label :medication %>
-      <%= f.text_area :medication, :rows => "4" %>
+        <%= f.label :medication %>
+        <%= f.text_area :medication, :rows => "4" %>
 
-      <%= f.label :surgery_history %>
-      <%= f.text_area :surgery_history, :rows => "4" %>
+        <%= f.label :surgery_history %>
+        <%= f.text_area :surgery_history, :rows => "4" %>
+     </div> 
+     <div id="medical-history-form-section"> 
+      <span class="checkbox-collection-title">Medical History: (Check all that apply)</span>
+      
+      <%= f.fields_for :medical_history do |mh| %>
+        <div class="radio-button">
+          <%= mh.check_box :blindness %>
+          <%= mh.label :blindness %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :deafness %>
+          <%= mh.label :deafness %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :vertigo %>
+          <%= mh.label :vertigo %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :disc_bulge_cervical_spine %>
+          <%= mh.label :disc_bulge_cervical_spine %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :thyroid_disease %>
+          <%= mh.label :thyroid_disease %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :asthma %>
+          <%= mh.label :asthma %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :copd %>
+          <%= mh.label :copd %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :heart_attack %>
+          <%= mh.label :heart_attack %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :arrhythmia_pacemaker %>
+          <%= mh.label :arrhythmia_pacemaker %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :congestive_heart_failure %>
+          <%= mh.label :congestive_heart_failure %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :hypertension %>
+          <%= mh.label :hypertension %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :congenital_condition %>
+          <%= mh.label :congenital_condition %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :stents_bypass %>
+          <%= mh.label :stents_bypass %>
+        </div>
+        <div class="radio-button">
+          <%= mh.check_box :blood_vessel_disease %>
+          <%= mh.label :blood_vessel_disease %>
+        </div>
 
-      <br>
-      <span style="margin-right: 20px;">Do You Smoke?</span>
+
+      <% end %>
+      </div>
+      <span class="smoking_title">Do You Smoke?</span>
       <label class="radio inline">
         <input type="radio" id="form_smoke" name="form[smoke]" value="false" checked="checked"> No
       </label>
@@ -36,17 +100,6 @@
       <br>
       <br>
       <div class="alert alert-info">All other fields are automatically added for the time being.</div>
-      
-      <% 
-        params = {
-          :medical_history => { blindness: true, deafness: false, vertigo: true, other: "I have a few other conditions including awesomeness"
-          },
-          :family_history => { heart_disease: true, lung_disease: false, kidney_disease: false, rheumatiod_arthritis: true, cancer: false, other: "Entrepreneurship"
-          }
-        }
-      %>
-
-      <% puts hash_as_hidden_fields(params) %>
 
       <%= f.submit "Create a record", class: "btn btn-large btn-primary" %>
 

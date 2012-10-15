@@ -16,6 +16,10 @@ html {
   overflow-y: scroll;
 }
 
+.whitesmoke {
+  background: whitesmoke;
+}
+
 body {
   padding-top: 60px;
 }
@@ -193,3 +197,46 @@ aside {
 .smoke-alcohol label, input {
   float: left;
 }
+
+/* tables */
+.med_history_table_header {
+  text-align: center !important;
+  background: #2C2C2C !important;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.checkbox-collection-title{
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.radio-button {
+  float: left;
+  width: 50%;
+}
+
+.radio-button input {
+  margin-right: 5px;
+}
+
+.smoking_title {
+  margin-top: 20px;
+  margin-right: 20px;
+  display: inline;
+}
+
+#text-input-form-section {
+  overflow: auto;
+}
+
+#medical-history-form-section {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+
+
+

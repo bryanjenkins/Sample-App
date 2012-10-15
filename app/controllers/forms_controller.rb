@@ -9,6 +9,7 @@ class FormsController < ApplicationController
     # Hard coded to create only posts for Bryan
     @user = User.find(1)
     @form = Form.new
+    @form.medical_history = MedicalHistory.new
   end
 
   def create
