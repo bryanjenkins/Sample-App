@@ -38,7 +38,7 @@
             <table class="table table-bordered whitesmoke">
                 <tbody>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Heent</td>
+                    <td class="table_header" colspan="2">Heent</td>
                   </tr>
                   <tr>
                     <td>Blindness</td> 
@@ -53,7 +53,7 @@
                     <td><%= y(@form.medical_history.vertigo) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Neck</td>
+                    <td class="table_header" colspan="2">Neck</td>
                   </tr>
                   <tr>
                     <td>Disc Bulge Cervical Spine</td> 
@@ -64,7 +64,7 @@
                     <td><%= y(@form.medical_history.thyroid_disease) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Lungs</td>
+                    <td class="table_header" colspan="2">Lungs</td>
                   </tr>
                   <tr>
                     <td>Asthma</td> 
@@ -75,7 +75,7 @@
                     <td><%= y(@form.medical_history.copd) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Heart</td>
+                    <td class="table_header" colspan="2">Heart</td>
                   </tr>
                   <tr>
                     <td>Heart Attack</td> 
@@ -110,7 +110,7 @@
                     <td><%= y(@form.medical_history.other_heart) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Abdomen</td>
+                    <td class="table_header" colspan="2">Abdomen</td>
                   </tr>
                   <tr>
                     <td>Ulcer</td> 
@@ -151,7 +151,7 @@
                     <td><%= y(@form.medical_history.other_abdomen) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Neurological</td>
+                    <td class="table_header" colspan="2">Neurological</td>
                   </tr>
                   <tr>
                     <td>Stroke</td> 
@@ -166,7 +166,7 @@
                     <td><%= y(@form.medical_history.paralysis) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Blood</td>
+                    <td class="table_header" colspan="2">Blood</td>
                   </tr>
                   <tr>
                     <td>Anemia</td> 
@@ -181,7 +181,7 @@
                     <td><%= y(@form.medical_history.coumadin) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Musculoskeletal</td>
+                    <td class="table_header" colspan="2">Musculoskeletal</td>
                   </tr>
                   <tr>
                     <td>Neck Pain</td> 
@@ -204,7 +204,7 @@
                     <td><%= y(@form.medical_history.lupus) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Nervous Disorder</td>
+                    <td class="table_header" colspan="2">Nervous Disorder</td>
                   </tr>
                   <tr>
                     <td>Depression</td> 
@@ -219,20 +219,172 @@
                     <td><%= y(@form.medical_history.other_nervous_disorder) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Endocrine</td>
+                    <td class="table_header" colspan="2">Endocrine</td>
                   </tr>
                   <tr>
                     <td>Diabetes</td> 
                     <td><%= y(@form.medical_history.diabetes) %></td>
                   </tr>
                   <tr>
-                    <td class="med_history_table_header" colspan="2">Other Conditions</td>
+                    <td class="table_header" colspan="2">Other Medical History</td>
                   </tr>
-                  <tr>
-                    <td>Conditions</td> 
+                  <tr> 
                     <td><%= y(@form.medical_history.other_medical_history) %></td>
                   </tr>
                 </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Current Symptoms</td>
+          <td>
+            <table class="table table-bordered whitesmoke">
+              <tbody>
+                <tr>
+                  <td class="table_header" colspan="2">General</td>
+                </tr>
+                <tr>
+                  <td>Fever</td>
+                  <td><%= y(@form.symptom.fever) %></td>
+                </tr>
+                <tr>
+                  <td>Weight Loss</td>
+                  <td><%= y(@form.symptom.weight_loss) %></td>
+                </tr>
+                <tr>
+                  <td>Weight Gain</td>
+                  <td><%= y(@form.symptom.weight_gain) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Eyes</td>
+                </tr>
+                <tr>
+                  <td>Blurring</td>
+                  <td><%= y(@form.symptom.blurring) %></td>
+                </tr>
+                <tr>
+                  <td>Loss of Vision</td>
+                  <td><%= y(@form.symptom.loss_of_vision) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Cardiovascular</td>
+                </tr>
+                <tr>
+                  <td>Difficulty Breathing While Laying Down</td>
+                  <td><%= y(@form.symptom.difficulty_breathing_while_lying_down) %></td>
+                </tr>
+                <tr>
+                  <td>New Chest Pain or Discomfort</td>
+                  <td><%= y(@form.symptom.new_chest_pain_or_discomfort) %></td>
+                </tr>
+                <tr>
+                  <td>Palapitations</td>
+                  <td><%= y(@form.symptom.palpitations) %></td>
+                </tr>
+                <tr>
+                  <td>New Leg Swelling</td>
+                  <td><%= y(@form.symptom.new_leg_swelling) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Respiratory</td>
+                </tr>
+                <tr>
+                  <td>Coughing up Blood</td>
+                  <td><%= y(@form.symptom.coughing_up_blood) %></td>
+                </tr>
+                <tr>
+                  <td>New Shortness of Breath</td>
+                  <td><%= y(@form.symptom.new_shortness_of_breath) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Gastrointestinal</td>
+                </tr>
+                <tr>
+                  <td>Vomiting Blood</td>
+                  <td><%= y(@form.symptom.vomiting_blood) %></td>
+                </tr>
+                <tr>
+                  <td>Bloody Stools</td>
+                  <td><%= y(@form.symptom.bloody_stools) %></td>
+                </tr>
+                <tr>
+                  <td>New Abdominal Pain</td>
+                  <td><%= y(@form.symptom.new_abdominal_pain) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Urinary</td>
+                </tr>
+                <tr>
+                  <td>Blood in Urine</td>
+                  <td><%= y(@form.symptom.blood_in_urine) %></td>
+                </tr>
+                <tr>
+                  <td>New Inability to Control Bladder</td>
+                  <td><%= y(@form.symptom.new_inability_to_control_bladder) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Musculoskeletal</td>
+                </tr>
+                <tr>
+                  <td>Gout</td>
+                  <td><%= y(@form.symptom.gout) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Skin</td>
+                </tr>
+                <tr>
+                  <td>Rash</td>
+                  <td><%= y(@form.symptom.rash) %></td>
+                </tr>
+                <tr>
+                  <td>New Open Wound</td>
+                  <td><%= y(@form.symptom.new_open_wound) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Neurological</td>
+                </tr>
+                <tr>
+                  <td>Brief Paralysis</td>
+                  <td><%= y(@form.symptom.brief_paralysis) %></td>
+                </tr>
+                <tr>
+                  <td>New Numbness</td>
+                  <td><%= y(@form.symptom.new_numbness) %></td>
+                </tr>
+                <tr>
+                  <td>New Tingling</td>
+                  <td><%= y(@form.symptom.new_tingling) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Endocrine</td>
+                </tr>
+                <tr>
+                  <td>Excessive Thirst</td>
+                  <td><%= y(@form.symptom.excessive_thirst) %></td>
+                </tr>
+                <tr>
+                  <td>Excessive Hunger</td>
+                  <td><%= y(@form.symptom.excessive_hunger) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Heme / Lymphatic</td>
+                </tr>
+                <tr>
+                  <td>Abnormal Bruising</td>
+                  <td><%= y(@form.symptom.abnormal_bruising) %></td>
+                </tr>
+                <tr>
+                  <td class="table_header" colspan="2">Allergic / Immunologic</td>
+                </tr>
+                <tr>
+                  <td>Hives</td>
+                  <td><%= y(@form.symptom.hives) %></td>
+                </tr>
+                <tr>
+                  <td>HIV Exposure</td>
+                  <td><%= y(@form.symptom.hiv_exposure) %></td>
+                </tr>
+              </tbody>
             </table>
           </td>
         </tr>

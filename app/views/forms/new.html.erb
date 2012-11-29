@@ -1,107 +1,337 @@
 <%= provide(:title, 'New Patient Form') %>
 
-<h1>New Medical Record</h1>
+<h2>Medical Record Form</h2>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for @form do |f| %>
-      <div id="text-input-form-section">
-        <%= render 'shared/error_messages'  %>
-        <%= f.label :allergies %>
-        <%= f.text_area :allergies, :rows => "4" %>
+    <div id="text-input-form-section">
+      <%= render 'shared/error_messages'  %>
+      <%= f.label :allergies %>
+      <%= f.text_area :allergies, :rows => "4" %>
 
-        <%= f.label :medication %>
-        <%= f.text_area :medication, :rows => "4" %>
+      <%= f.label :medication %>
+      <%= f.text_area :medication, :rows => "4" %>
 
-        <%= f.label :surgery_history %>
-        <%= f.text_area :surgery_history, :rows => "4" %>
-     </div> 
-     <div id="medical-history-form-section"> 
-      <span class="checkbox-collection-title">Medical History: (Check all that apply)</span>
+      <%= f.label :surgery_history %>
+      <%= f.text_area :surgery_history, :rows => "4" %>
+    </div> 
+    <div id="medical-history-form-section"> 
+      <span class="checkbox-collection-title"><b>Medical History: (Check all that apply)</b></span>
       
       <%= f.fields_for :medical_history do |mh| %>
-        <div class="radio-button">
-          <%= mh.check_box :blindness %>
-          <%= mh.label :blindness %>
+        
+        <div class="radio-buttons">
+          
+          <div class="radio-button">
+            <%= mh.check_box :blindness %>
+            <%= mh.label :blindness %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :deafness %>
+            <%= mh.label :deafness %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :vertigo %>
+            <%= mh.label :vertigo %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :disc_bulge_cervical_spine %>
+            <%= mh.label :disc_bulge_cervical_spine %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :thyroid_disease %>
+            <%= mh.label :thyroid_disease %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :asthma %>
+            <%= mh.label :asthma %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :copd %>
+            <%= mh.label :copd %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :heart_attack %>
+            <%= mh.label :heart_attack %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :arrhythmia_pacemaker %>
+            <%= mh.label :arrhythmia_pacemaker %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :congestive_heart_failure %>
+            <%= mh.label :congestive_heart_failure %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :hypertension %>
+            <%= mh.label :hypertension %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :congenital_condition %>
+            <%= mh.label :congenital_condition %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :stents_bypass %>
+            <%= mh.label :stents_bypass %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :blood_vessel_disease %>
+            <%= mh.label :blood_vessel_disease %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :ulcer %>
+            <%= mh.label :ulcer %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :hiatal_hernia %>
+            <%= mh.label :hiatal_hernia %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :liver_disease %>
+            <%= mh.label :liver_disease %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :kidney_disease %>
+            <%= mh.label :kidney_disease %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :irritable_bowel_disease %>
+            <%= mh.label :irritable_bowel_disease %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :chrons_disease %>
+            <%= mh.label :chrons_disease %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :diverticulitis %>
+            <%= mh.label :diverticulitis %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :stroke %>
+            <%= mh.label :stroke %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :parkinsons %>
+            <%= mh.label :parkinsons %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :paralysis %>
+            <%= mh.label :paralysis %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :anemia %>
+            <%= mh.label :anemia %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :clotting_problems %>
+            <%= mh.label :clotting_problems %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :coumadin %>
+            <%= mh.label :coumadin %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :neck_pain %>
+            <%= mh.label :neck_pain %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :back_pain %>
+            <%= mh.label :back_pain %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :osteoarthritis %>
+            <%= mh.label :osteoarthritis %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :rheumatoid_arthritis %>
+            <%= mh.label :rheumatoid_arthritis %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :lupus %>
+            <%= mh.label :lupus %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :depression %>
+            <%= mh.label :depression %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :anxiety %>
+            <%= mh.label :anxiety %>
+          </div>
+          <div class="radio-button">
+            <%= mh.check_box :diabetes %>
+            <%= mh.label :diabetes %>
+          </div>
         </div>
-        <div class="radio-button">
-          <%= mh.check_box :deafness %>
-          <%= mh.label :deafness %>
+        
+        <div class="other-field">
+          <%= mh.label :other_heart, "Do you have any other issues with your heart?" %>
+          <%= mh.text_area :other_heart, :rows => "2" %>
         </div>
-        <div class="radio-button">
-          <%= mh.check_box :vertigo %>
-          <%= mh.label :vertigo %>
+        <div class="other-field">
+          <%= mh.label :other_abdomen, "Do you have any other issues with your abdomen?" %>
+          <%= mh.text_area :other_abdomen, :rows => "2" %>
         </div>
-        <div class="radio-button">
-          <%= mh.check_box :disc_bulge_cervical_spine %>
-          <%= mh.label :disc_bulge_cervical_spine %>
+        <div class="other-field">
+          <%= mh.label :other_nervous_disorder, "Do you have any other nervous disorders?" %>
+          <%= mh.text_area :other_nervous_disorder, :rows => "2" %>
         </div>
-        <div class="radio-button">
-          <%= mh.check_box :thyroid_disease %>
-          <%= mh.label :thyroid_disease %>
+        <div class="other-field">
+          <%= mh.label :other_medical_history, "Do you have any medical history not mentioned above?" %>
+          <%= mh.text_area :other_medical_history, :rows => "2" %>
         </div>
-        <div class="radio-button">
-          <%= mh.check_box :asthma %>
-          <%= mh.label :asthma %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :copd %>
-          <%= mh.label :copd %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :heart_attack %>
-          <%= mh.label :heart_attack %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :arrhythmia_pacemaker %>
-          <%= mh.label :arrhythmia_pacemaker %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :congestive_heart_failure %>
-          <%= mh.label :congestive_heart_failure %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :hypertension %>
-          <%= mh.label :hypertension %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :congenital_condition %>
-          <%= mh.label :congenital_condition %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :stents_bypass %>
-          <%= mh.label :stents_bypass %>
-        </div>
-        <div class="radio-button">
-          <%= mh.check_box :blood_vessel_disease %>
-          <%= mh.label :blood_vessel_disease %>
-        </div>
-
-
       <% end %>
-      </div>
-      <span class="smoking_title">Do You Smoke?</span>
-      <label class="radio inline">
-        <input type="radio" id="form_smoke" name="form[smoke]" value="false" checked="checked"> No
-      </label>
-      <label class="radio inline">
-        <input type="radio" id="form_smoke" name="form[smoke]" value="true"> Yes
-      </label>
-      <br>
-      <br>
-      <span style="margin-right: 20px;">Do You Drink Alcohol?</span>
-      <label class="radio inline">
-        <input type="radio" id="form_alcohol" name="form[alcohol]" value="false" checked="checked"> No
-      </label>
-      <label class="radio inline">
-        <input type="radio" id="form_alcohol" name="form[alcohol]" value="true"> Yes
-      </label>
-      
-      <br>
-      <br>
-      <div class="alert alert-info">All other fields are automatically added for the time being.</div>
+    </div>
 
-      <%= f.submit "Create a record", class: "btn btn-large btn-primary" %>
+    <div id="medical-history-form-section"> 
+      <span class="checkbox-collection-title"><b>Any New Symptoms: (Check all that apply)</b></span>
+      <%= f.fields_for :symptom do |s| %>
+        
+        <div class="radio-buttons">
+        
+          <div class="radio-button">
+            <%= s.check_box :fever %>
+            <%= s.label :fever %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :weight_loss %>
+            <%= s.label :weight_loss %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :weight_gain %>
+            <%= s.label :weight_gain %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :blurring %>
+            <%= s.label :blurring %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :loss_of_vision %>
+            <%= s.label :loss_of_vision %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :ringing_in_the_ears %>
+            <%= s.label :ringing_in_the_ears %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :decreased_hearing %>
+            <%= s.label :decreased_hearing %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :difficulty_breathing_while_lying_down %>
+            <%= s.label :difficulty_breathing_while_lying_down %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_chest_pain_or_discomfort %>
+            <%= s.label :new_chest_pain_or_discomfort %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :palpitations %>
+            <%= s.label :palpitations %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_leg_swelling %>
+            <%= s.label :new_leg_swelling %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :coughing_up_blood %>
+            <%= s.label :coughing_up_blood %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_shortness_of_breath %>
+            <%= s.label :new_shortness_of_breath %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :vomiting_blood %>
+            <%= s.label :vomiting_blood %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :bloody_stools %>
+            <%= s.label :bloody_stools %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_abdominal_pain %>
+            <%= s.label :new_abdominal_pain %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :blood_in_urine %>
+            <%= s.label :blood_in_urine %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_inability_to_control_bladder %>
+            <%= s.label :new_inability_to_control_bladder %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :gout %>
+            <%= s.label :gout %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :rash %>
+            <%= s.label :rash %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_open_wound %>
+            <%= s.label :new_open_wound %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :brief_paralysis %>
+            <%= s.label :brief_paralysis %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_numbness %>
+            <%= s.label :new_numbness %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :new_tingling %>
+            <%= s.label :new_tingling %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :excessive_thirst %>
+            <%= s.label :excessive_thirst %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :excessive_hunger %>
+            <%= s.label :excessive_hunger %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :abnormal_bruising %>
+            <%= s.label :abnormal_bruising %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :hives %>
+            <%= s.label :hives %>
+          </div>
+          <div class="radio-button">
+            <%= s.check_box :hiv_exposure %>
+            <%= s.label :hiv_exposure %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <span class="smoking_title">Do You Smoke?</span>
+    <label class="radio inline">
+      <input type="radio" id="form_smoke" name="form[smoke]" value="false" checked="checked"> No
+    </label>
+    <label class="radio inline">
+      <input type="radio" id="form_smoke" name="form[smoke]" value="true"> Yes
+    </label>
+    <br>
+    <br>
+    <span class="drinking_title">Do You Drink Alcohol?</span>
+    <label class="radio inline">
+      <input type="radio" id="form_alcohol" name="form[alcohol]" value="false" checked="checked"> No
+    </label>
+    <label class="radio inline">
+      <input type="radio" id="form_alcohol" name="form[alcohol]" value="true"> Yes
+    </label>
+    
+    <br>
+    <br>
+    <div class="alert alert-info">All other fields are automatically added for the time being.</div>
+
+    <%= f.submit "Create a record", class: "btn btn-large btn-primary" %>
 
     <% end %>
   </div>

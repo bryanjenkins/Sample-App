@@ -10,6 +10,7 @@ class FormsController < ApplicationController
     @user = User.find(1)
     @form = Form.new
     @form.medical_history = MedicalHistory.new
+    @form.symptom = Symptom.new
   end
 
   def create

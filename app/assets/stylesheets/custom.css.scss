@@ -199,7 +199,7 @@ aside {
 }
 
 /* tables */
-.med_history_table_header {
+.table_header {
   text-align: center !important;
   background: #2C2C2C !important;
   color: white;
@@ -226,15 +226,32 @@ aside {
   margin-top: 20px;
   margin-right: 20px;
   display: inline;
+  font-weight: bold;
+}
+
+.drinking_title {
+  margin-right: 20px;
+  display: inline;
+  font-weight: bold;
 }
 
 #text-input-form-section {
   overflow: auto;
+  label {
+    font-weight:bold;
+  }
 }
 
 #medical-history-form-section {
   overflow: auto;
   margin-bottom: 20px;
+}
+
+.radio-buttons {
+  float: left;
+  overflow: auto;
+  margin-bottom: 20px;
+  padding-left: 1px;
 }
 
 
