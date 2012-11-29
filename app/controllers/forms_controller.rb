@@ -7,7 +7,7 @@ class FormsController < ApplicationController
 
   def new
     # Hard coded to create only posts for Bryan
-    @user = User.find(1)
+    @user = User.find(2)
     @form = Form.new
     @form.medical_history = MedicalHistory.new
     @form.symptom = Symptom.new
@@ -15,7 +15,7 @@ class FormsController < ApplicationController
 
   def create
     # Hard coded to create only posts for Bryan
-    @user = User.find(1)
+    @user = User.find(2)
     @form = @user.forms.build(params[:form])
     if @form.save 
       flash[:success] = "Record Saved Successfully!"
