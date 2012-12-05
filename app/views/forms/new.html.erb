@@ -16,6 +16,37 @@
       <%= f.label :surgery_history %>
       <%= f.text_area :surgery_history, :rows => "4" %>
     </div> 
+    <div id="family-history-form-section">
+      <%= f.fields_for :family_history do |fh| %>
+      <span class="checkbox-collection-title"><b>Family History: (Check all that apply)</b></span> 
+        <div class="radio-buttons">      
+          <div class="radio-button">
+            <%= fh.check_box :heart_disease %>
+            <%= fh.label :heart_disease %>
+          </div>
+          <div class="radio-button">
+            <%= fh.check_box :lung_disease %>
+            <%= fh.label :lung_disease %>
+          </div>
+          <div class="radio-button">
+            <%= fh.check_box :kidney_disease %>
+            <%= fh.label :kidney_disease %>
+          </div>
+          <div class="radio-button">
+            <%= fh.check_box :rheumatoid_arthritis%>
+            <%= fh.label :rheumatoid_arthritis %>
+          </div>
+          <div class="radio-button">
+            <%= fh.check_box :cancer%>
+            <%= fh.label :cancer %>
+          </div>      
+        </div>  
+        <div class="other-field">
+            <%= fh.label :other, "Do you have any other issues with your family history?" %>
+            <%= fh.text_area :other, :rows => "2" %>
+          </div>
+      <% end %>
+    </div>
     <div id="medical-history-form-section"> 
       <span class="checkbox-collection-title"><b>Medical History: (Check all that apply)</b></span>
       

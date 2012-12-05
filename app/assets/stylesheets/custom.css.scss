@@ -242,12 +242,18 @@ aside {
   }
 }
 
+#family-history-form-section {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
 #medical-history-form-section {
   overflow: auto;
   margin-bottom: 20px;
 }
 
 .radio-buttons {
+  width: 100%;
   float: left;
   overflow: auto;
   margin-bottom: 20px;

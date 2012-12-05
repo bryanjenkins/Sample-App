@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015160544) do
+ActiveRecord::Schema.define(:version => 20121205161730) do
+
+  create_table "family_histories", :force => true do |t|
+    t.boolean  "heart_disease"
+    t.boolean  "lung_disease"
+    t.boolean  "kidney_disease"
+    t.boolean  "rheumatoid_arthritis"
+    t.boolean  "cancer"
+    t.text     "other"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "form_id"
+  end
 
   create_table "forms", :force => true do |t|
     t.text     "allergies"

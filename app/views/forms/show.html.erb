@@ -29,9 +29,41 @@
         <tr>
           <td>Family History</td>
           <td>
-            <%= @form.family_history_id %>
+            <table class="table table-bordered whitesmoke">
+              <tbody>
+                <tr>
+                  <td class="table_header" colspan="2">Family History</td>
+                </tr>
+                <tr>
+                  <td>Heart Disease</td> 
+                  <td><%= y(@form.family_history.heart_disease) %></td>
+                </tr>
+                <tr>
+                  <td>Lung Disease</td> 
+                  <td><%= y(@form.family_history.lung_disease) %></td>
+                </tr>
+                <tr>
+                  <td>Kidney Disease</td> 
+                  <td><%= y(@form.family_history.kidney_disease) %></td>
+                </tr>
+                <tr>
+                  <td>Rheumatoid Arthritis</td> 
+                  <td><%= y(@form.family_history.rheumatoid_arthritis) %></td>
+                </tr>
+                <tr>
+                  <td>Cancer</td> 
+                  <td><%= y(@form.family_history.cancer) %></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <b>Other: &nbsp;</b>
+                    <%= @form.family_history.other %>
+                  </td> 
+                </tr>
+              </tbody>
+            </table>
           </td>
-        </tr>
+        </tr>     
         <tr>
           <td>Medical History</td>
           <td>
@@ -106,8 +138,9 @@
                     <td><%= y(@form.medical_history.blood_vessel_disease) %></td>
                   </tr>
                   <tr>
-                    <td>Other</td> 
-                    <td><%= y(@form.medical_history.other_heart) %></td>
+                    <td colspan="2">
+                      <b>Other: &nbsp;</b><%= @form.medical_history.other_heart %>
+                    </td> 
                   </tr>
                   <tr>
                     <td class="table_header" colspan="2">Abdomen</td>
@@ -215,8 +248,9 @@
                     <td><%= y(@form.medical_history.anxiety) %></td>
                   </tr>
                   <tr>
-                    <td>Other</td> 
-                    <td><%= y(@form.medical_history.other_nervous_disorder) %></td>
+                    <td colspan="2">
+                      <b>Other: &nbsp;</b><%= @form.medical_history.other_nervous_disorder %>
+                    </td> 
                   </tr>
                   <tr>
                     <td class="table_header" colspan="2">Endocrine</td>
@@ -229,7 +263,7 @@
                     <td class="table_header" colspan="2">Other Medical History</td>
                   </tr>
                   <tr> 
-                    <td><%= y(@form.medical_history.other_medical_history) %></td>
+                    <td><%= @form.medical_history.other_medical_history %></td>
                   </tr>
                 </tbody>
             </table>
