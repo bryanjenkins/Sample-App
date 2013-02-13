@@ -1,11 +1,13 @@
 SampleApp::Application.routes.draw do
 
+  devise_for :users
+
   get "forms/new"
 
   resources :users
   resources :forms
 
-  root :to => 'static_pages#home'
+  root to: 'static_pages#home'
 
   match '/signup', to:  'users#new'
  
