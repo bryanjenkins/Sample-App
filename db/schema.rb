@@ -27,15 +27,15 @@ ActiveRecord::Schema.define(:version => 20121205161730) do
 
   create_table "forms", :force => true do |t|
     t.text     "allergies"
-    t.integer  "family_history_id"
-    t.integer  "medical_history_id"
+    t.text     "medical_history"
     t.text     "medication"
     t.text     "surgery_history"
     t.boolean  "smoke"
     t.boolean  "alcohol"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "user_id"
+    t.integer  "family_history_id"
   end
 
   add_index "forms", ["user_id", "created_at"], :name => "index_forms_on_user_id_and_created_at"
