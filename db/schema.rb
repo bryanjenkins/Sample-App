@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213161157) do
+ActiveRecord::Schema.define(:version => 20130213212233) do
 
   create_table "family_histories", :force => true do |t|
     t.boolean  "heart_disease"
@@ -86,6 +86,16 @@ ActiveRecord::Schema.define(:version => 20130213161157) do
     t.datetime "updated_at",                :null => false
     t.boolean  "diabetes"
   end
+
+  create_table "patients", :force => true do |t|
+    t.string   "name"
+    t.integer  "form_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "patients", ["name", "form_id"], :name => "index_patients_on_name_and_form_id"
 
   create_table "symptoms", :force => true do |t|
     t.integer  "form_id"

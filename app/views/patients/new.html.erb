@@ -1,0 +1,16 @@
+<%= provide(:title, 'New Patient') %>
+
+<h2>Create New Patient</h2>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @patient do |p| %>
+    <div id="text-input-form-section">
+      <%= render 'shared/error_messages', object: @patient  %>
+      <%= p.label :name %>
+      <%= p.text_field :name %>
+      <%= p.submit "Create patient", class: "btn btn-large btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+// Place all the styles related to the Patient controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.patients_header {
+  float: left;
+}
+
+.create_patient {
+  float: right;
+  margin-top: 2px;
+}
+
+.forms {
+  clear: both;
+  margin-top: 40px;
+}
+
+.patient_actions {
+  float: right;
+  ul {
+    display: inline;
+    li {
+      display: inline;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+}

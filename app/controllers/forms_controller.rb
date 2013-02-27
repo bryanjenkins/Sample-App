@@ -1,5 +1,9 @@
 class FormsController < ApplicationController
 
+  def index
+    @forms = current_user.forms.all
+  end
+
   def show
     @form = Form.find(params[:id])
     @user = User.find(@form.user_id)

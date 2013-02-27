@@ -1,0 +1,16 @@
+<li>
+  <span class="content">
+    <%= patient.name %></span>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(patient.created_at) %> ago.
+  </span>
+  <div class="patient_actions">
+    <ul>
+      <!--  pass the Patient Id to the forms controller to create associated form.  -->
+      <li><%= link_to "View Forms (0)", '#' %> | </li>
+      <li><%= link_to "New Form", '#' %> | </li>
+      <li><%= link_to "Edit Patient", edit_patient_path(patient) %> | </li>
+      <li><%= link_to "Delete Patient", '#' %></li>
+    </ul>
+  </div>
+</li>

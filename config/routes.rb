@@ -6,6 +6,7 @@ SampleApp::Application.routes.draw do
 
   resources :users
   resources :forms
+  resources :patients
 
   root to: 'static_pages#home'
 
