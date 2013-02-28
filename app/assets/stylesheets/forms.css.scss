@@ -1,3 +1,12 @@
 // Place all the styles related to the Forms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.patient_name {
+  margin-bottom: 15px;
+}
+
+.patient_name span {
+  font-weight: bold;
+  margin-right: 8px;
+}

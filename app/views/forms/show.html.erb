@@ -3,9 +3,10 @@
   <aside class="span4">
     <section>
       <h1>
-        <%= @user.name %>
+        <%= @patient.name %>
       </h1>
-      <%= link_to "View all Records", @user %>
+      <%= link_to "View all Records", '#' %><br>
+      <%= link_to "Back to Patients", patients_path %>
     </section>
   </aside>
   <div class="span8">
@@ -19,7 +20,7 @@
       <tbody>
         <tr>
           <td>Name</td>
-          <td><%= @user.name %></td>
+          <td><%= @patient.name %></td>
         </tr>
         <tr>
           <td>Allergies</td>

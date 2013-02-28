@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213212233) do
+ActiveRecord::Schema.define(:version => 20130227213257) do
 
   create_table "family_histories", :force => true do |t|
     t.boolean  "heart_disease"
@@ -27,15 +27,14 @@ ActiveRecord::Schema.define(:version => 20130213212233) do
 
   create_table "forms", :force => true do |t|
     t.text     "allergies"
-    t.text     "medical_history"
     t.text     "medication"
     t.text     "surgery_history"
     t.boolean  "smoke"
     t.boolean  "alcohol"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "user_id"
-    t.integer  "family_history_id"
+    t.integer  "patient_id"
   end
 
   add_index "forms", ["user_id", "created_at"], :name => "index_forms_on_user_id_and_created_at"
@@ -89,13 +88,12 @@ ActiveRecord::Schema.define(:version => 20130213212233) do
 
   create_table "patients", :force => true do |t|
     t.string   "name"
-    t.integer  "form_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
   end
 
-  add_index "patients", ["name", "form_id"], :name => "index_patients_on_name_and_form_id"
+  add_index "patients", ["name"], :name => "index_patients_on_name_and_form_id"
 
   create_table "symptoms", :force => true do |t|
     t.integer  "form_id"

@@ -5,8 +5,9 @@ SampleApp::Application.routes.draw do
   get "forms/new"
 
   resources :users
-  resources :forms
-  resources :patients
+  resources :patients do 
+    resources :forms
+  end 
 
   root to: 'static_pages#home'
 

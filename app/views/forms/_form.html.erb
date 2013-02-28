@@ -1,6 +1,6 @@
 <li>
   <span class="content">
-    <%= link_to "Medical Record Form", form_path(form)  %></span>
+    <%= link_to "Medical Record Form", patient_form_path(patient, form) %></span>
   <span class="timestamp">
     Created <%= time_ago_in_words(form.created_at) %> ago.
   </span>

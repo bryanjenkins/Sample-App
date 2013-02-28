@@ -1,12 +1,13 @@
 <%= provide(:title, 'New Patient Form') %>
 
-<h2>Medical Record Form</h2>
+<h1>New Medical Record Form</h1>
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for @form do |f| %>
+    <%= form_for [@patient, @form] do |f| %>
     <div id="text-input-form-section">
-      <%= render 'shared/error_messages'  %>
+      <p class="patient_name"><span>Patient:</span> <%= @patient.name %></p>
+      <%= render 'shared/error_messages', object: @form   %>
       <%= f.label :allergies %>
       <%= f.text_area :allergies, :rows => "4" %>
 

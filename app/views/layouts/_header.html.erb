@@ -1,7 +1,11 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "MediRecord", root_path, id: "logo" %>
+      <% if current_user.nil? %>
+        <%= link_to "MediRecord", root_path, id: "logo" %>
+      <% else %>
+        <%= link_to "MediRecord", patients_path, id: "logo" %>
+      <% end %>
       <nav>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
