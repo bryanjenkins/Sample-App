@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227213257) do
+ActiveRecord::Schema.define(:version => 20130228195232) do
 
   create_table "family_histories", :force => true do |t|
     t.boolean  "heart_disease"
@@ -33,11 +33,10 @@ ActiveRecord::Schema.define(:version => 20130227213257) do
     t.boolean  "alcohol"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.integer  "user_id"
     t.integer  "patient_id"
   end
 
-  add_index "forms", ["user_id", "created_at"], :name => "index_forms_on_user_id_and_created_at"
+  add_index "forms", ["created_at"], :name => "index_forms_on_user_id_and_created_at"
 
   create_table "medical_histories", :force => true do |t|
     t.integer  "form_id"
@@ -58,14 +57,14 @@ ActiveRecord::Schema.define(:version => 20130227213257) do
     t.boolean  "blood_vessel_disease"
     t.text     "other_heart"
     t.boolean  "ulcer"
-    t.boolean  "ulcer_healed"
+    t.boolean  "ulcer_healed",              :default => true
     t.boolean  "hiatal_hernia"
     t.boolean  "liver_disease"
     t.boolean  "kidney_disease"
     t.boolean  "irritable_bowel_disease"
     t.boolean  "chrons_disease"
     t.boolean  "diverticulitis"
-    t.boolean  "other_abdomen"
+    t.text     "other_abdomen"
     t.boolean  "stroke"
     t.boolean  "parkinsons"
     t.boolean  "paralysis"
@@ -81,8 +80,8 @@ ActiveRecord::Schema.define(:version => 20130227213257) do
     t.boolean  "anxiety"
     t.text     "other_nervous_disorder"
     t.text     "other_medical_history"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.boolean  "diabetes"
   end
 

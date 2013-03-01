@@ -1,5 +1,4 @@
 class Form < ActiveRecord::Base
-  belongs_to :user
   belongs_to :patient
   has_one :medical_history
   has_one :family_history

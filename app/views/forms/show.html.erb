@@ -5,7 +5,7 @@
       <h1>
         <%= @patient.name %>
       </h1>
-      <%= link_to "View all Records", '#' %><br>
+      <%= link_to "View all Records", patient_forms_path(@patient) %><br>
       <%= link_to "Back to Patients", patients_path %>
     </section>
   </aside>
@@ -180,8 +180,10 @@
                     <td><%= y(@form.medical_history.diverticulitis) %></td>
                   </tr>
                   <tr>
-                    <td>Other</td> 
-                    <td><%= y(@form.medical_history.other_abdomen) %></td>
+                    <td colspan="2">
+                      <b>Other: &nbsp;</b>
+                      <%= @form.medical_history.other_abdomen %>
+                    </td> 
                   </tr>
                   <tr>
                     <td class="table_header" colspan="2">Neurological</td>

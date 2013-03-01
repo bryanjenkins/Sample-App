@@ -10,7 +10,6 @@ class FormsController < ApplicationController
   end
 
   def new
-    @user = User.find(current_user)
     @form = Form.new()
     @form.medical_history = MedicalHistory.new
     @form.family_history = FamilyHistory.new
@@ -19,8 +18,8 @@ class FormsController < ApplicationController
   end
 
   def create
-    @user = User.find(current_user)
-    @form = @user.forms.build(params[:form].merge(patient_id: params[:patient_id]))
+    @patient = Patient.find_by_id(params[:patient_id])
+    @form = @patient.forms.build(params[:form])
     if @form.save 
       flash[:success] = "Record Saved Successfully!"
       redirect_to patients_path
