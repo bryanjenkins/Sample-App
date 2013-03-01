@@ -1,8 +1,8 @@
 class Form < ActiveRecord::Base
   belongs_to :patient
-  has_one :medical_history
-  has_one :family_history
-  has_one :symptom
+  has_one :medical_history, dependent: :destroy
+  has_one :family_history, dependent: :destroy
+  has_one :symptom, dependent: :destroy
   accepts_nested_attributes_for :medical_history, :allow_destroy => true
   accepts_nested_attributes_for :family_history, :allow_destroy => true
   accepts_nested_attributes_for :symptom, :allow_destroy => true
