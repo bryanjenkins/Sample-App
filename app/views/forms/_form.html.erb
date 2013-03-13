@@ -1,7 +1,15 @@
 <li>
-  <span class="content">
-    <%= link_to "Medical Record Form", patient_form_path(patient, form) %></span>
-  <span class="timestamp">
-    Created <%= time_ago_in_words(form.created_at) %> ago.
-  </span>
+  <div class="patient_info">
+    <span class="content">
+      Patient Questionnaire</span>
+    <span class="timestamp">
+      Created <%= time_ago_in_words(form.created_at) %> ago.
+    </span>
+  </div>
+  <div class="patient_actions">
+    <ul>
+      <li><%= link_to '<i class="icon-eye-open"></i> View'.html_safe, patient_form_path(patient, form), :class => "btn" %></li>
+      <li><%= link_to '<i class="icon-print"></i> Print'.html_safe, print_pdf_path(patient, form), :class => "btn" %></li>
+    </ul>
+  </div>
 </li>

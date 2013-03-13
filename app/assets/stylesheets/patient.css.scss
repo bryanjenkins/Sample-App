@@ -4,6 +4,10 @@
 
 .patients_header {
   float: left;
+  .patient-icon {
+    margin-top: 7px;
+    margin-right: 9px;
+  }
 }
 
 .create_patient {
@@ -11,13 +15,20 @@
   margin-top: 2px;
 }
 
-.forms {
-  clear: both;
-  margin-top: 40px;
+.patient_name {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.patient_info {
+  width: 300px;
+  float: left;
 }
 
 .patient_actions {
   float: right;
+  margin-top: 4px;
   ul {
     display: inline;
     li {

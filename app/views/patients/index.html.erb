@@ -1,8 +1,8 @@
 <% provide(:title, current_user.name) %>
-<div class="row">
+<div class="row top-spacing">
   <div class="span12">
-    <h3 class="patients_header">Patients (<%= @patients.count %>)</h3>
-    <%= link_to "Create New Patient", new_patient_path, class: "create_patient" %>
+    <h3 class="patients_header"><i class="icon-user patient-icon"></i>Patients (<%= @patients.count %>)</h3>
+    <%= link_to "Create New Patient", new_patient_path, class: "create_patient btn btn-info" %>
     <% if @patients.any? %>
       <ol class="forms">
         <%= render @patients %>

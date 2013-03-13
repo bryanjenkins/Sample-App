@@ -1,16 +1,18 @@
 <li>
-  <span class="content">
+  <div class="patient_info">
+    <span class="content">
     <%= patient.name %></span>
   <span class="timestamp">
     Created <%= time_ago_in_words(patient.created_at) %> ago.
   </span>
+  </div>
   <div class="patient_actions">
     <ul>
       <!--  pass the Patient Id to the forms controller to create associated form.  -->
-      <li><%= link_to "View Forms (#{patient.forms.count})", patient_forms_path(patient) %> | </li>
-      <li><%= link_to "New Form", new_patient_form_path(patient) %> | </li>
-      <li><%= link_to "Edit Patient", edit_patient_path(patient) %> | </li>
-      <li><%= link_to "Delete Patient", '#' %></li>
+      <li><%= link_to '<i class="icon-list"></i> View All Forms'.html_safe, patient_forms_path(patient), :class => "btn" %></li>
+      <li><%= link_to '<i class="icon-plus"></i> New Form'.html_safe, new_patient_form_path(patient), :class => "btn" %></li>
+      <li><%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_patient_path(patient), :class => "btn" %></li>
+      <li><%= link_to '<i class="icon-trash"></i> Delete'.html_safe, '#', :class => "btn" %></li>
     </ul>
   </div>
 </li>

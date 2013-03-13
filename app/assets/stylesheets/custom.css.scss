@@ -57,6 +57,10 @@ h2 {
   color: $grayLight;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -173,6 +177,7 @@ input, textarea, select, .uneditable-input {
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    overflow: auto;
   }
 }
 .content {
@@ -260,6 +265,9 @@ aside {
   padding-left: 1px;
 }
 
+.top-spacing {
+  margin-top: 15px;
+}
 
 
 

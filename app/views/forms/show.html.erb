@@ -2,12 +2,10 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
+      <h3>
         <%= @patient.name %>
-      </h1>
-      <%= link_to "View all Records", patient_forms_path(@patient) %><br>
-      <%= link_to "Back to Patients", patients_path %><br>
-      <%= link_to 'Print Pdf', print_pdf_path(@patient.id,@form.id) %>
+      </h3>
+      <%= link_to '<i class="icon-print icon-white"></i> Print PDF'.html_safe, print_pdf_path(@patient.id,@form.id), :class => "btn btn-info print-btn" %>
     </section>
   </aside>
   <div class="span8">

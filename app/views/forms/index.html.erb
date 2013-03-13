@@ -1,15 +1,13 @@
 <% provide(:title, @patient.name + "'s Forms") %>
-<div class="row">
+<div class="row top-spacing">
   <div class="span12">
     <% if @patient.forms.any? %>
-      <h3><%= @patient.name %>'s Forms (<%= @patient.forms.count %>)</h3>
-      <%= link_to 'Back', patients_path %>
-      <ul>
-        <ol class="forms">
-          <%= render @patient.forms, patient: @patient %>
-        </ol>
-        <%#= will_paginate @forms %>
-    </ul>
+      <h3 class="forms_header"><i class="icon-briefcase form-icon"></i><%= @patient.name %>'s Forms (<%= @patient.forms.count %>)</h3>
+      <%= link_to "Create New Form", new_patient_form_path(@patient), class: "create_form btn btn-info" %>
+      <ol class="forms">
+        <%= render @patient.forms, patient: @patient %>
+      </ol>
+      <%#= will_paginate @forms %>
     <% end %>
   </div>
 </div>
