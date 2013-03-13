@@ -6,7 +6,8 @@
         <%= @patient.name %>
       </h1>
       <%= link_to "View all Records", patient_forms_path(@patient) %><br>
-      <%= link_to "Back to Patients", patients_path %>
+      <%= link_to "Back to Patients", patients_path %><br>
+      <%= link_to 'Print Pdf', print_pdf_path(@patient.id,@form.id) %>
     </section>
   </aside>
   <div class="span8">
