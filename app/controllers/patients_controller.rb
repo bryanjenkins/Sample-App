@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
   
   def index
-    @patients = Patient.all
+    @patients = Patient.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

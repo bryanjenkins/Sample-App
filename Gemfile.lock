@@ -230,4 +230,4 @@ DEPENDENCIES
   sass-rails (= 3.2.5)
   sys-proctable!
   uglifier (= 1.2.3)
-  will_paginate (= 3.0.3)
+  will_paginate (~> 3.0)

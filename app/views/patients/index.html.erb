@@ -3,10 +3,19 @@
   <div class="span12">
     <h3 class="patients_header"><i class="icon-user patient-icon"></i>Patients (<%= @patients.count %>)</h3>
     <%= link_to "Create New Patient", new_patient_path, class: "create_patient btn btn-info" %>
+    <%= form_tag patients_path, :method => 'get', :id => 'search-form' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <button type="submit" id="search-btn" class="btn btn-inverse">
+          <i class="icon-search icon-white"></i>
+        </button>
+      </p>
+    <% end %>
     <% if @patients.any? %>
       <ol class="forms">
         <%= render @patients %>
       </ol>
+      <%= will_paginate @patients %>
     <% end %>
   </div>
 </div>

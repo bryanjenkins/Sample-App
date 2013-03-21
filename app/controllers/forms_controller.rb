@@ -2,6 +2,7 @@ class FormsController < ApplicationController
 
   def index
     @patient = Patient.find(params[:patient_id])
+    @forms = @patient.forms.paginate(:page => params[:page], :per_page => 5)
   end
 
   def show
