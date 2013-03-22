@@ -25,7 +25,6 @@ body {
 }
 
 section {
-  overflow: auto;
 }
 
 .center {
@@ -111,7 +110,7 @@ aside {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin: 45px 0 50px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
@@ -241,19 +240,16 @@ aside {
 }
 
 #text-input-form-section {
-  overflow: auto;
   label {
     font-weight:bold;
   }
 }
 
 #family-history-form-section {
-  overflow: auto;
   margin-bottom: 20px;
 }
 
 #medical-history-form-section {
-  overflow: auto;
   margin-bottom: 20px;
 }
 
