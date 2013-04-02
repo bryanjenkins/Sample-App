@@ -5,10 +5,13 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for [@patient, @form] do |f| %>
-    <div id="text-input-form-section">
-      <p class="patient_name">
+    <p class="patient_name">
         <%= @patient.name %>
       </p>
+      <div id="top-submit-btn">
+        <%= f.submit "Save", class: "btn btn-large btn-info" %>
+      </div>
+    <div id="text-input-form-section">
       <%= render 'shared/error_messages', object: @form   %>
       <%= f.label :allergies %>
       <%= f.text_area :allergies, :rows => "4" %>
@@ -114,11 +117,11 @@
             <%= mh.label :blood_vessel_disease %>
           </div>
           <div class="radio-button">
-            <%= mh.check_box :ulcer %>
+            <%= mh.check_box :ulcer, id: "ulcer_rb" %>
             <%= mh.label :ulcer %>
           </div>
-          <div class="radio-button">
-            <%= mh.check_box :ulcer_healed %>
+          <div class="radio-button" id="ulcer_healed_rb" style="display:none">
+            <%= mh.check_box :ulcer_healed, id: "ulcer_headed" %>
             <%= mh.label :ulcer_healed %>
           </div>
           <div class="radio-button">
@@ -222,131 +225,131 @@
       <% end %>
     </div>
 
-    <div id="medical-history-form-section"> 
+    <!-- <div id="medical-history-form-section"> 
       <span class="checkbox-collection-title"><b>Any New Symptoms: (Check all that apply)</b></span>
-      <%= f.fields_for :symptom do |s| %>
+      <%#= f.fields_for :symptom do |s| %>
         
         <div class="radio-buttons">
         
           <div class="radio-button">
-            <%= s.check_box :fever %>
-            <%= s.label :fever %>
+            <%#= s.check_box :fever %>
+            <%#= s.label :fever %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :weight_loss %>
-            <%= s.label :weight_loss %>
+            <%#= s.check_box :weight_loss %>
+            <%#= s.label :weight_loss %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :weight_gain %>
-            <%= s.label :weight_gain %>
+            <%#= s.check_box :weight_gain %>
+            <%#= s.label :weight_gain %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :blurring %>
-            <%= s.label :blurring %>
+            <%#= s.check_box :blurring %>
+            <%#= s.label :blurring %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :loss_of_vision %>
-            <%= s.label :loss_of_vision %>
+            <%#= s.check_box :loss_of_vision %>
+            <%#= s.label :loss_of_vision %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :ringing_in_the_ears %>
-            <%= s.label :ringing_in_the_ears %>
+            <%#= s.check_box :ringing_in_the_ears %>
+            <%#= s.label :ringing_in_the_ears %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :decreased_hearing %>
-            <%= s.label :decreased_hearing %>
+            <%#= s.check_box :decreased_hearing %>
+            <%#= s.label :decreased_hearing %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :difficulty_breathing_while_lying_down %>
-            <%= s.label :difficulty_breathing_while_lying_down %>
+            <%#= s.check_box :difficulty_breathing_while_lying_down %>
+            <%#= s.label :difficulty_breathing_while_lying_down %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_chest_pain_or_discomfort %>
-            <%= s.label :new_chest_pain_or_discomfort %>
+            <%#= s.check_box :new_chest_pain_or_discomfort %>
+            <%#= s.label :new_chest_pain_or_discomfort %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :palpitations %>
-            <%= s.label :palpitations %>
+            <%#= s.check_box :palpitations %>
+            <%#= s.label :palpitations %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_leg_swelling %>
-            <%= s.label :new_leg_swelling %>
+            <%#= s.check_box :new_leg_swelling %>
+            <%#= s.label :new_leg_swelling %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :coughing_up_blood %>
-            <%= s.label :coughing_up_blood %>
+            <%#= s.check_box :coughing_up_blood %>
+            <%#= s.label :coughing_up_blood %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_shortness_of_breath %>
-            <%= s.label :new_shortness_of_breath %>
+            <%#= s.check_box :new_shortness_of_breath %>
+            <%#= s.label :new_shortness_of_breath %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :vomiting_blood %>
-            <%= s.label :vomiting_blood %>
+            <%#= s.check_box :vomiting_blood %>
+            <%#= s.label :vomiting_blood %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :bloody_stools %>
-            <%= s.label :bloody_stools %>
+            <%#= s.check_box :bloody_stools %>
+            <%#= s.label :bloody_stools %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_abdominal_pain %>
-            <%= s.label :new_abdominal_pain %>
+            <%#= s.check_box :new_abdominal_pain %>
+            <%#= s.label :new_abdominal_pain %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :blood_in_urine %>
-            <%= s.label :blood_in_urine %>
+            <%#= s.check_box :blood_in_urine %>
+            <%#= s.label :blood_in_urine %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_inability_to_control_bladder %>
-            <%= s.label :new_inability_to_control_bladder %>
+            <%#= s.check_box :new_inability_to_control_bladder %>
+            <%#= s.label :new_inability_to_control_bladder %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :gout %>
-            <%= s.label :gout %>
+            <%#= s.check_box :gout %>
+            <%#= s.label :gout %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :rash %>
-            <%= s.label :rash %>
+            <%#= s.check_box :rash %>
+            <%#= s.label :rash %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_open_wound %>
-            <%= s.label :new_open_wound %>
+            <%#= s.check_box :new_open_wound %>
+            <%#= s.label :new_open_wound %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :brief_paralysis %>
-            <%= s.label :brief_paralysis %>
+            <%#= s.check_box :brief_paralysis %>
+            <%#= s.label :brief_paralysis %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_numbness %>
-            <%= s.label :new_numbness %>
+            <%#= s.check_box :new_numbness %>
+            <%#= s.label :new_numbness %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :new_tingling %>
-            <%= s.label :new_tingling %>
+            <%#= s.check_box :new_tingling %>
+            <%#= s.label :new_tingling %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :excessive_thirst %>
-            <%= s.label :excessive_thirst %>
+            <%#= s.check_box :excessive_thirst %>
+            <%#= s.label :excessive_thirst %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :excessive_hunger %>
-            <%= s.label :excessive_hunger %>
+            <%#= s.check_box :excessive_hunger %>
+            <%#= s.label :excessive_hunger %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :abnormal_bruising %>
-            <%= s.label :abnormal_bruising %>
+            <%#= s.check_box :abnormal_bruising %>
+            <%#= s.label :abnormal_bruising %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :hives %>
-            <%= s.label :hives %>
+            <%#= s.check_box :hives %>
+            <%#= s.label :hives %>
           </div>
           <div class="radio-button">
-            <%= s.check_box :hiv_exposure %>
-            <%= s.label :hiv_exposure %>
+            <%#= s.check_box :hiv_exposure %>
+            <%#= s.label :hiv_exposure %>
           </div>
         </div>
-      <% end %>
-    </div>
+      <% #end %>
+    </div> -->
 
     <span class="smoking_title">Do You Smoke?</span>
     <label class="radio inline">
@@ -369,8 +372,36 @@
     <br>
     <div class="alert alert-info">All other fields are automatically added for the time being.</div>
 
-    <%= f.submit "Create a record", class: "btn btn-large btn-info" %>
+    <%= f.submit "Save", class: "btn btn-large btn-info" %>
 
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {  
+// Handler for .ready() called.
+  
+  //Check if they already have a ulcer
+  if ( $('#ulcer_rb').is(':checked') ) {
+  
+    $('#ulcer_healed_rb').show();
+    ulcer_healed_is_visible = true;
+  
+  } else {
+
+    var ulcer_healed_is_visible = false;
+  }
+
+  $('#ulcer_rb').click(function() {
+    $('#ulcer_healed_rb').toggle();
+    if ( ulcer_healed_is_visible ) {
+        $('#ulcer_healed_rb').hide();
+        ulcer_healed_is_visible = false;
+        $('#ulcer_headed').attr('checked',false);
+    } else {
+        $('#ulcer_healed_rb').show();
+        ulcer_healed_is_visible = true;
+    }
+  });
+});
+</script>

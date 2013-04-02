@@ -1,9 +1,10 @@
-<% provide(:title, @patient.name + "'s Forms") %>
+<% title_ending =  @patient.name + ' Forms'%>
+<% provide(:title, title_ending) %>
 <div class="row top-spacing">
   <div class="span12">
-    <% if @patient.forms.any? %>
-      <h3 class="forms_header"><i class="icon-briefcase form-icon"></i><%= @patient.name %>'s Forms (<%= @patient.forms.count %>)</h3>
+    <h3 class="forms_header"><i class="icon-briefcase form-icon"></i><%= @patient.name %>'s Forms (<%= @patient.forms.count %>)</h3>
       <%= link_to "Create New Form", new_patient_form_path(@patient), class: "create_form btn btn-info" %>
+    <% if @patient.forms.any? %>
       <ol class="forms">
         <%= render @forms, patient: @patient %>
       </ol>

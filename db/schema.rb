@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228195232) do
+ActiveRecord::Schema.define(:version => 20130326190542) do
 
   create_table "family_histories", :force => true do |t|
     t.boolean  "heart_disease"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20130228195232) do
     t.boolean  "blood_vessel_disease"
     t.text     "other_heart"
     t.boolean  "ulcer"
-    t.boolean  "ulcer_healed",              :default => true
+    t.boolean  "ulcer_healed"
     t.boolean  "hiatal_hernia"
     t.boolean  "liver_disease"
     t.boolean  "kidney_disease"
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(:version => 20130228195232) do
     t.boolean  "anxiety"
     t.text     "other_nervous_disorder"
     t.text     "other_medical_history"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.boolean  "diabetes"
   end
 

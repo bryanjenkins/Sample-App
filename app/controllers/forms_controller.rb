@@ -11,11 +11,20 @@ class FormsController < ApplicationController
   end
 
   def new
-    @form = Form.new()
-    @form.medical_history = MedicalHistory.new
-    @form.family_history = FamilyHistory.new
-    @form.symptom = Symptom.new
     @patient = Patient.find_by_id(params[:patient_id])
+    @most_recent_form = @patient.forms.first
+    if @most_recent_form != nil #could be a problem
+      @form = Form.new(@most_recent_form.attributes.symbolize_keys.except(:id,:created_at, :updated_at))
+      @form.medical_history = MedicalHistory.new(@most_recent_form.medical_history.attributes.symbolize_keys.except(:id,:form_id,:created_at, :updated_at))
+      @form.family_history = FamilyHistory.new(@most_recent_form.family_history.attributes.symbolize_keys.except(:id,:form_id,:created_at, :updated_at))
+      #@form.symptom = Symptom.new(@most_recent_form.symptom.attributes.symbolize_keys.except(:id,:form_id,:created_at, :updated_at))
+    else 
+      @form = Form.new
+      @form.medical_history = MedicalHistory.new
+      @form.family_history = FamilyHistory.new
+      #@form.symptom = Symptom.new
+    end
+    
   end
 
   def create
@@ -23,8 +32,9 @@ class FormsController < ApplicationController
     @form = @patient.forms.build(params[:form])
     if @form.save 
       flash[:success] = "Record Saved Successfully!"
-      redirect_to patients_path
+      redirect_to patient_form_path(@patient,@form)
     else
+      flash[:error] = "Record couldn't be saved. Please contact administrator."
       render patients_path
     end
   end
@@ -64,7 +74,7 @@ class FormsController < ApplicationController
     pdf.checkbox :congenital_condition if mh.congenital_condition == true
     pdf.checkbox :stents if mh.stents_bypass == true
     pdf.checkbox :blood_vessel_disease if mh.blood_vessel_disease == true
-    if mh.other_heart
+    if !mh.other_heart.empty?
       pdf.checkbox :other_heart_check
       pdf.text :other_heart, mh.other_heart
     end
@@ -82,7 +92,7 @@ class FormsController < ApplicationController
     pdf.checkbox :ibs if mh.irritable_bowel_disease == true
     pdf.checkbox :crohns if mh.chrons_disease == true
     pdf.checkbox :diverticulitis if mh.diverticulitis == true
-    if mh.other_abdomen
+    if !mh.other_abdomen.empty?
       pdf.checkbox :other_abdomen_check
       pdf.text :other_abdomen, mh.other_abdomen
     end
@@ -99,7 +109,7 @@ class FormsController < ApplicationController
     pdf.checkbox :lupus if mh.lupus == true
     pdf.checkbox :depression if mh.depression == true
     pdf.checkbox :anxiety if mh.anxiety == true
-    if mh.other_nervous_disorder
+    if !mh.other_nervous_disorder.empty?
       pdf.checkbox :other_nd_check
       pdf.text :other_nervous_disorder, mh.other_nervous_disorder
     end

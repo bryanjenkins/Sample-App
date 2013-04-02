@@ -2,9 +2,11 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h3>
+      <h3 id="patient-title">
         <%= @patient.name %>
       </h3>
+      <%= link_to 'View All Forms', patient_forms_path(@patient), :class => "btn" %>
+      <br>
       <%= link_to '<i class="icon-print icon-white"></i> Print PDF'.html_safe, print_pdf_path(@patient.id,@form.id), :class => "btn btn-info print-btn" %>
     </section>
   </aside>
@@ -270,7 +272,7 @@
             </table>
           </td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>Current Symptoms</td>
           <td>
             <table class="table table-bordered whitesmoke">
@@ -280,149 +282,149 @@
                 </tr>
                 <tr>
                   <td>Fever</td>
-                  <td><%= y(@form.symptom.fever) %></td>
+                  <td><%#= y(@form.symptom.fever) %></td>
                 </tr>
                 <tr>
                   <td>Weight Loss</td>
-                  <td><%= y(@form.symptom.weight_loss) %></td>
+                  <td><%#= y(@form.symptom.weight_loss) %></td>
                 </tr>
                 <tr>
                   <td>Weight Gain</td>
-                  <td><%= y(@form.symptom.weight_gain) %></td>
+                  <td><%#= y(@form.symptom.weight_gain) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Eyes</td>
                 </tr>
                 <tr>
                   <td>Blurring</td>
-                  <td><%= y(@form.symptom.blurring) %></td>
+                  <td><%#= y(@form.symptom.blurring) %></td>
                 </tr>
                 <tr>
                   <td>Loss of Vision</td>
-                  <td><%= y(@form.symptom.loss_of_vision) %></td>
+                  <td><%#= y(@form.symptom.loss_of_vision) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Cardiovascular</td>
                 </tr>
                 <tr>
                   <td>Difficulty Breathing While Laying Down</td>
-                  <td><%= y(@form.symptom.difficulty_breathing_while_lying_down) %></td>
+                  <td><%#= y(@form.symptom.difficulty_breathing_while_lying_down) %></td>
                 </tr>
                 <tr>
                   <td>New Chest Pain or Discomfort</td>
-                  <td><%= y(@form.symptom.new_chest_pain_or_discomfort) %></td>
+                  <td><%#= y(@form.symptom.new_chest_pain_or_discomfort) %></td>
                 </tr>
                 <tr>
                   <td>Palapitations</td>
-                  <td><%= y(@form.symptom.palpitations) %></td>
+                  <td><%#= y(@form.symptom.palpitations) %></td>
                 </tr>
                 <tr>
                   <td>New Leg Swelling</td>
-                  <td><%= y(@form.symptom.new_leg_swelling) %></td>
+                  <td><%#= y(@form.symptom.new_leg_swelling) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Respiratory</td>
                 </tr>
                 <tr>
                   <td>Coughing up Blood</td>
-                  <td><%= y(@form.symptom.coughing_up_blood) %></td>
+                  <td><%#= y(@form.symptom.coughing_up_blood) %></td>
                 </tr>
                 <tr>
                   <td>New Shortness of Breath</td>
-                  <td><%= y(@form.symptom.new_shortness_of_breath) %></td>
+                  <td><%#= y(@form.symptom.new_shortness_of_breath) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Gastrointestinal</td>
                 </tr>
                 <tr>
                   <td>Vomiting Blood</td>
-                  <td><%= y(@form.symptom.vomiting_blood) %></td>
+                  <td><%#= y(@form.symptom.vomiting_blood) %></td>
                 </tr>
                 <tr>
                   <td>Bloody Stools</td>
-                  <td><%= y(@form.symptom.bloody_stools) %></td>
+                  <td><%#= y(@form.symptom.bloody_stools) %></td>
                 </tr>
                 <tr>
                   <td>New Abdominal Pain</td>
-                  <td><%= y(@form.symptom.new_abdominal_pain) %></td>
+                  <td><%#= y(@form.symptom.new_abdominal_pain) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Urinary</td>
                 </tr>
                 <tr>
                   <td>Blood in Urine</td>
-                  <td><%= y(@form.symptom.blood_in_urine) %></td>
+                  <td><%#= y(@form.symptom.blood_in_urine) %></td>
                 </tr>
                 <tr>
                   <td>New Inability to Control Bladder</td>
-                  <td><%= y(@form.symptom.new_inability_to_control_bladder) %></td>
+                  <td><%#= y(@form.symptom.new_inability_to_control_bladder) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Musculoskeletal</td>
                 </tr>
                 <tr>
                   <td>Gout</td>
-                  <td><%= y(@form.symptom.gout) %></td>
+                  <td><%#= y(@form.symptom.gout) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Skin</td>
                 </tr>
                 <tr>
                   <td>Rash</td>
-                  <td><%= y(@form.symptom.rash) %></td>
+                  <td><%#= y(@form.symptom.rash) %></td>
                 </tr>
                 <tr>
                   <td>New Open Wound</td>
-                  <td><%= y(@form.symptom.new_open_wound) %></td>
+                  <td><%#= y(@form.symptom.new_open_wound) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Neurological</td>
                 </tr>
                 <tr>
                   <td>Brief Paralysis</td>
-                  <td><%= y(@form.symptom.brief_paralysis) %></td>
+                  <td><%#= y(@form.symptom.brief_paralysis) %></td>
                 </tr>
                 <tr>
                   <td>New Numbness</td>
-                  <td><%= y(@form.symptom.new_numbness) %></td>
+                  <td><%#= y(@form.symptom.new_numbness) %></td>
                 </tr>
                 <tr>
                   <td>New Tingling</td>
-                  <td><%= y(@form.symptom.new_tingling) %></td>
+                  <td><%#= y(@form.symptom.new_tingling) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Endocrine</td>
                 </tr>
                 <tr>
                   <td>Excessive Thirst</td>
-                  <td><%= y(@form.symptom.excessive_thirst) %></td>
+                  <td><%#= y(@form.symptom.excessive_thirst) %></td>
                 </tr>
                 <tr>
                   <td>Excessive Hunger</td>
-                  <td><%= y(@form.symptom.excessive_hunger) %></td>
+                  <td><%#= y(@form.symptom.excessive_hunger) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Heme / Lymphatic</td>
                 </tr>
                 <tr>
                   <td>Abnormal Bruising</td>
-                  <td><%= y(@form.symptom.abnormal_bruising) %></td>
+                  <td><%#= y(@form.symptom.abnormal_bruising) %></td>
                 </tr>
                 <tr>
                   <td class="table_header" colspan="2">Allergic / Immunologic</td>
                 </tr>
                 <tr>
                   <td>Hives</td>
-                  <td><%= y(@form.symptom.hives) %></td>
+                  <td><%#= y(@form.symptom.hives) %></td>
                 </tr>
                 <tr>
                   <td>HIV Exposure</td>
-                  <td><%= y(@form.symptom.hiv_exposure) %></td>
+                  <td><%#= y(@form.symptom.hiv_exposure) %></td>
                 </tr>
               </tbody>
             </table>
           </td>
-        </tr>
+        </tr> -->
         <tr>
           <td>Medication</td>
           <td><%= @form.medication %></td>
