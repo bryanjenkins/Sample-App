@@ -352,22 +352,39 @@
     </div> -->
 
     <span class="smoking_title">Do You Smoke?</span>
-    <label class="radio inline">
-      <input type="radio" id="form_smoke" name="form[smoke]" value="false" checked="checked"> No
-    </label>
-    <label class="radio inline">
-      <input type="radio" id="form_smoke" name="form[smoke]" value="true"> Yes
-    </label>
+    <% if @form.smoke == true %>
+      <label class="radio inline">
+        <input type="radio" id="form_smoke" name="form[smoke]" value="false"> No
+      </label>
+      <label class="radio inline">
+        <input type="radio" id="form_smoke" name="form[smoke]" value="true" checked="checked"> Yes
+      </label>
+    <% else %>
+      <label class="radio inline">
+        <input type="radio" id="form_smoke" name="form[smoke]" value="false" checked="checked"> No
+      </label>
+      <label class="radio inline">
+        <input type="radio" id="form_smoke" name="form[smoke]" value="true"> Yes
+      </label>
+    <% end %>
     <br>
     <br>
     <span class="drinking_title">Do You Drink Alcohol?</span>
-    <label class="radio inline">
-      <input type="radio" id="form_alcohol" name="form[alcohol]" value="false" checked="checked"> No
-    </label>
-    <label class="radio inline">
-      <input type="radio" id="form_alcohol" name="form[alcohol]" value="true"> Yes
-    </label>
-    
+    <% if @form.alcohol == true %>
+      <label class="radio inline">
+        <input type="radio" id="form_alcohol" name="form[alcohol]" value="false"> No
+      </label>
+      <label class="radio inline">
+        <input type="radio" id="form_alcohol" name="form[alcohol]" value="true" checked="checked"> Yes
+      </label>
+    <% else %>
+      <label class="radio inline">
+        <input type="radio" id="form_alcohol" name="form[alcohol]" value="false" checked="checked"> No
+      </label>
+      <label class="radio inline">
+        <input type="radio" id="form_alcohol" name="form[alcohol]" value="true"> Yes
+      </label>
+    <% end %>
     <br>
     <br>
     <div class="alert alert-info">All other fields are automatically added for the time being.</div>
